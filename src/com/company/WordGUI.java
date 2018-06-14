@@ -48,7 +48,7 @@ public class WordGUI {
                     Speichere.speichern(textArea1.getText(), sb.toString());
                     // Damit Java ruhe gibt
                 } catch (FileNotFoundException e1) {
-                    System.err.println("Öööhh ich muss rumheulen mama");
+                    JOptionPane.showMessageDialog(null, "Ein unerwarteter Fehler ist aufgetreten");
                     System.exit(0);
                 }
             }
@@ -57,18 +57,15 @@ public class WordGUI {
         ladenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String dateien = "";
+                String datei = "";
                 try {
                     Scanner sc = new Scanner(new FileReader(".Dateien.txt"));
                     // Lesen wie die zu ladende Datei heisst
-                    dateien = sc.nextLine();
+                    datei = sc.nextLine();
                     // Laden der Datei
-                    textArea1.append(Speichere.lesen(dateien));
+                    textArea1.append(Speichere.lesen(datei));
                 } catch (FileNotFoundException f) {
-                    System.err.println("Ich bin Java und muss rumheulen");
-                }
-                catch (NoSuchElementException g) {
-                    System.err.println("Es ist keine Datei gespeichert");
+                    JOptionPane.showMessageDialog(null, "Es ist keine Datei vorhanden");
                 }
             }
         });

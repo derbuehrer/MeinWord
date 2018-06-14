@@ -1,9 +1,9 @@
 package com.company;
 
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Speichere {
@@ -29,6 +29,7 @@ public class Speichere {
             while (lesen.hasNextLine());
         }
         catch (FileNotFoundException f) {
+            JOptionPane.showMessageDialog(null, "Es ist keine Datei vorhanden");
             return null;
         }
         return sb.toString();
