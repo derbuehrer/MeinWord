@@ -28,9 +28,6 @@ public class Speichere {
             }
             while (lesen.hasNextLine());
         }
-        catch (NoSuchElementException e) {
-            return null;
-        }
         catch (FileNotFoundException f) {
             return null;
         }
